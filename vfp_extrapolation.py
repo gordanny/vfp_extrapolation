@@ -1,9 +1,9 @@
-from get_data import get_data
-from get_extrapolation_range import get_extrapolation_range
+from get_data import get_values
+from get_ranges import get_extrapolation_range
 
 
 def extrapolation(file, input_parameters):
-    data = get_data(file)
+    data = get_values(file)
     parameters_string = '|'.join([str(float(parameter)) for parameter in input_parameters])
     if parameters_string in data['data']:
         return data['data'][parameters_string]
